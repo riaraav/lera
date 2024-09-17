@@ -1,31 +1,19 @@
 class Animal:
-    def init(self, name, age):
-        self.name = name
-        self.age = age
+    def __init__(self, name, age):
+        self._name = name
+        self._age = age
 
     def get_description(self):
-        return f"Имя: {self.name}, Возраст: {self.age}"
-
+        return f"{self._name}, {self._age} years old"
 class Zebra(Animal):
-    def init(self, name, age, stripes):
-        super().init(name, age)
-        self.stripes = stripes
-
     def get_description(self):
-        return f"{super().get_description()}, Вид: Зебра, Полосы: {self.stripes}"
+        return f"{self._name}, {self._age} years old, a zebra"
 
 class Dolphin(Animal):
-    def init(self, name, age, fin_size):
-        super().init(name, age)
-        self.fin_size = fin_size
-
     def get_description(self):
-        return f"{super().get_description()}, Вид: Дельфин, Размер плавника: {self.fin_size}"
+        return f"{self._name}, {self._age} years old, a dolphin"
+zebra = Zebra("Stripes", 5)
+dolphin = Dolphin("Flipper", 10)
 
-# Создание объектов
-zebra = Zebra("Зорро", 5, "Черно-белые")
-dolphin = Dolphin("Флиппер", 8, "Средний")
-
-# Вывод описаний
-print(zebra.get_description())  # Вывод: Имя: Зорро, Возраст: 5, Вид: Зебра, Полосы: Черно-белые
-print(dolphin.get_description())  # Вывод: Имя: Флиппер, Возраст: 8, Вид: Дельфин, Размер плавника: Средний
+print(zebra.get_description())  # Stripes, 5 years old, a zebra
+print(dolphin.get_description())  # Flipper, 10 years old, a dolphin
