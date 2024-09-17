@@ -1,0 +1,22 @@
+class Mother:
+    def init(self, name):
+        self.name = name
+
+    def str(self):
+        return f"Я - мама, меня зовут {self.name}"
+
+class Daughter(Mother):
+    def init(self, name, age):
+        super().init(name)
+        self.age = age
+
+    def str(self):
+        return f"Я - дочь, меня зовут {self.name}, мне {self.age} лет"
+
+# Создание объектов
+mother = Mother("Анна")
+daughter = Daughter("Елена", 25)
+
+# Вывод информации
+print(mother)  # Вывод: Я - мама, меня зовут Анна
+print(daughter)  # Вывод: Я - дочь, меня зовут Елена, мне 25 лет
